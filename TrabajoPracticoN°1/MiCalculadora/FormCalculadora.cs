@@ -24,6 +24,7 @@ namespace MiCalculadora
         /// <param name="e"></param>
         private void FormCalculadora_Load(object sender, EventArgs e)
         {
+            lblResultado.Text = "0";
             cmbOperador.Items.Add("+");
             cmbOperador.Items.Add("-");
             cmbOperador.Items.Add("*");
@@ -99,5 +100,6 @@ namespace MiCalculadora
             Numero numero = new Numero();
             lblResultado.Text = numero.BinarioDecimal(lblResultado.Text);
         }
+
     }
 }

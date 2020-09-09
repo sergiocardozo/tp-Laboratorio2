@@ -31,7 +31,8 @@ namespace Entidades
         /// <returns>Retorna el resulta de la operacion</returns>
         public static double Operar(Numero num1, Numero num2, string operador)
         {
-            char operar = Convert.ToChar(operador);
+            char operar;
+            char.TryParse(operador, out operar);
             switch (ValidarOperador(operar))
             {
                 case "+":

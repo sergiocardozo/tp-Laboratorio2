@@ -9,7 +9,7 @@ namespace Entidades
     public class Numero
     {
         #region Atributos
-        private double numero; 
+        private double numero;
         #endregion
 
         #region Propiedades
@@ -24,7 +24,7 @@ namespace Entidades
 
         #region Constructores
         /// <summary>
-        /// Constructor por defecto, instancia el objeto de tipo numero en 0.
+        /// Constructor por defecto, inicializa el objeto de tipo numero en 0.
         /// </summary>
         public Numero()
         {
