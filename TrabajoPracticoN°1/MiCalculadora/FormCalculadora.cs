@@ -11,9 +11,9 @@ using Entidades;
 
 namespace MiCalculadora
 {
-    public partial class FormCalculadora : Form
+    public partial class LaCalculadora : Form
     {
-        public FormCalculadora()
+        public LaCalculadora()
         {
             InitializeComponent();
         }
@@ -69,7 +69,7 @@ namespace MiCalculadora
         /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = FormCalculadora.Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
+            lblResultado.Text = LaCalculadora.Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
         }
         /// <summary>
         /// Cierra el formulario al presionar el boton Cerrar.
