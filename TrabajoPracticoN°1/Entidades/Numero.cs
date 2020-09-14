@@ -27,8 +27,9 @@ namespace Entidades
         /// Constructor por defecto, inicializa el objeto de tipo numero en 0.
         /// </summary>
         public Numero()
+            :this(0)
         {
-            numero = 0;
+            
         }
         /// <summary>
         /// Inicializa una instancia del tipo Numero recibiendo un numero del tipo double.

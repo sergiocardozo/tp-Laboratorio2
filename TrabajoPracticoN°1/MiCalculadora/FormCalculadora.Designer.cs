@@ -63,16 +63,22 @@
             // 
             // cmbOperador
             // 
+            this.cmbOperador.BackColor = System.Drawing.SystemColors.Menu;
+            this.cmbOperador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOperador.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbOperador.FormattingEnabled = true;
             this.cmbOperador.Location = new System.Drawing.Point(187, 63);
             this.cmbOperador.Name = "cmbOperador";
+            this.cmbOperador.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbOperador.Size = new System.Drawing.Size(140, 32);
             this.cmbOperador.TabIndex = 1;
             // 
             // btnOperar
             // 
-            this.btnOperar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOperar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOperar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnOperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOperar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOperar.Location = new System.Drawing.Point(49, 125);
             this.btnOperar.Margin = new System.Windows.Forms.Padding(5);
@@ -85,7 +91,9 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.Location = new System.Drawing.Point(199, 125);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(5);
@@ -98,7 +106,9 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(344, 125);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(5);
@@ -112,7 +122,9 @@
             // btnConvertirABinario
             // 
             this.btnConvertirABinario.BackColor = System.Drawing.SystemColors.Control;
-            this.btnConvertirABinario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConvertirABinario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConvertirABinario.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnConvertirABinario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConvertirABinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvertirABinario.Location = new System.Drawing.Point(49, 181);
             this.btnConvertirABinario.Name = "btnConvertirABinario";
@@ -127,7 +139,8 @@
             this.btnConvertirADecimal.BackColor = System.Drawing.SystemColors.Control;
             this.btnConvertirADecimal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConvertirADecimal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnConvertirADecimal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConvertirADecimal.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnConvertirADecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConvertirADecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvertirADecimal.Location = new System.Drawing.Point(262, 181);
             this.btnConvertirADecimal.Name = "btnConvertirADecimal";

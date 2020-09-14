@@ -78,7 +78,7 @@ namespace MiCalculadora
         /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Close();
+            Dispose();
         }
         /// <summary>
         /// Convierte el resultado a binario al presionar el boton.
