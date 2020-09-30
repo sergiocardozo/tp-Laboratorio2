@@ -10,7 +10,7 @@ namespace Entidades
 {
     public class Sedan : Vehiculo
     {
-        public enum ETipo { Monovolumen, Sedan }
+        public enum ETipo { CuatroPuertas, CincoPuertas }
         private ETipo tipo;
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace Entidades
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
-            : this(marca, chasis, color, ETipo.Monovolumen)
+            : this(marca, chasis, color, ETipo.CuatroPuertas)
         {
         }
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo etipo)
