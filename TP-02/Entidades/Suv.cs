@@ -8,8 +8,9 @@ namespace Entidades
 {
     public class Suv : Vehiculo
     {
+        #region Propiedades
         /// <summary>
-        /// Las camionetas son grandes
+        /// ReadOnly. Las camionetas son grandes
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -18,11 +19,26 @@ namespace Entidades
                 return ETamanio.Grande;
             }
         }
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Constructor que inicializa atributos utilizando la clase base
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Suv(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         {
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Metodo que sobreescribe los datos de la clase base y añade el tamaño
+        /// </summary>
+        /// <returns>Retorna el mensaje en string</returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -34,6 +50,7 @@ namespace Entidades
             sb.AppendLine("---------------------");
 
             return sb.ToString();
-        }
+        } 
+        #endregion
     }
 }

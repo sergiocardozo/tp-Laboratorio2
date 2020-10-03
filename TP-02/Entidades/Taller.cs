@@ -11,18 +11,33 @@ namespace Entidades
     /// </summary>
     public sealed class Taller
     {
+        #region Atributos
         private int espacioDisponible;
         private List<Vehiculo> vehiculos;
+        #endregion
+
+        #region Enumerados
+        /// <summary>
+        /// Enumerado con los tipos de vehiculos.
+        /// </summary>
         public enum ETipo
         {
             Ciclomotor, Sedan, SUV, Todos
-        }
+        } 
+        #endregion
 
         #region "Constructores"
+        /// <summary>
+        /// Constructor privado que inicializa la lista de vehiculos.
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
+        /// <summary>
+        /// Constructor que inicializa los espacios disponibles.
+        /// </summary>
+        /// <param name="espacioDisponible"></param>
         public Taller(int espacioDisponible) : this()
         {
             this.espacioDisponible = espacioDisponible;

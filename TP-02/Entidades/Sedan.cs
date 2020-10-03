@@ -10,11 +10,23 @@ namespace Entidades
 {
     public class Sedan : Vehiculo
     {
-        public enum ETipo { CuatroPuertas, CincoPuertas }
-        private ETipo tipo;
-
+        #region Enumerados
         /// <summary>
-        /// Por defecto, TIPO será Monovolumen
+        /// Enumerado que define el tipo de vehiculo sedan
+        /// </summary>
+        public enum ETipo
+        {
+            CuatroPuertas, CincoPuertas
+        }
+        #endregion
+
+        #region Atributo
+        private ETipo tipo; 
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Por defecto, TIPO será CuatroPuertas
         /// </summary>
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
@@ -23,14 +35,23 @@ namespace Entidades
             : this(marca, chasis, color, ETipo.CuatroPuertas)
         {
         }
+        /// <summary>
+        /// Constructor que inicializa atributos utilizando la clase base e inicializa el tipo.
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="etipo"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo etipo)
             : base(chasis, marca, color)
         {
             tipo = etipo;
         }
+        #endregion
 
+        #region Propiedades
         /// <summary>
-        /// Los automoviles son medianos
+        /// ReadOnly. Los automoviles son medianos
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -39,7 +60,13 @@ namespace Entidades
                 return ETamanio.Mediano;
             }
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Metodo que sobreescribe los datos de la clase base y añade el tamaño
+        /// </summary>
+        /// <returns>Retorna el mensaje en string</returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -52,6 +79,7 @@ namespace Entidades
             sb.AppendLine("---------------------");
 
             return sb.ToString();
-        }
+        } 
+        #endregion
     }
 }

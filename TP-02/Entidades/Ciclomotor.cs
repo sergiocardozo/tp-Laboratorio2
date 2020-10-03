@@ -9,8 +9,9 @@ namespace Entidades
     public class Ciclomotor : Vehiculo
     {
 
+        #region Propiedades
         /// <summary>
-        /// Las motos son chicas
+        /// ReadOnly. Las motos son chicas
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -19,11 +20,26 @@ namespace Entidades
                 return ETamanio.Chico;
             }
         }
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Constructor que inicializa los atributos utilizando la clase base
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Ciclomotor(EMarca marca, string chasis, ConsoleColor color)
-            :base(chasis,marca,color)
+            : base(chasis, marca, color)
         {
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Metodo que sobreescribe los datos de la clase base y añade el tamaño
+        /// </summary>
+        /// <returns>Retorna el mensaje en string</returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -35,6 +51,8 @@ namespace Entidades
             sb.AppendLine("---------------------");
 
             return sb.ToString();
-        }
+        } 
+        #endregion
+
     }
 }
