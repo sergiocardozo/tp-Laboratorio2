@@ -1,0 +1,9 @@
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\bin\Debug\ClasesAbstractas.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\bin\Debug\ClasesAbstractas.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\bin\Debug\Excepciones.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\bin\Debug\Excepciones.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\obj\Debug\ClasesAbstractas.csprojAssemblyReference.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\obj\Debug\ClasesAbstractas.csproj.CoreCompileInputs.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\obj\Debug\ClasesAbstractas.csproj.CopyComplete
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\obj\Debug\ClasesAbstractas.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesAbstractas\obj\Debug\ClasesAbstractas.pdb

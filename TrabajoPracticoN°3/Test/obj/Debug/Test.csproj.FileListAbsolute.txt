@@ -1,0 +1,16 @@
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\Test.exe.config
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\Test.exe
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\Test.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\Archivos.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\ClasesAbstractas.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\ClasesInstanciables.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\Excepciones.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\Archivos.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\ClasesAbstractas.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\ClasesInstanciables.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\bin\Debug\Excepciones.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\obj\Debug\Test.csproj.CopyComplete
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\obj\Debug\Test.exe
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Test\obj\Debug\Test.pdb

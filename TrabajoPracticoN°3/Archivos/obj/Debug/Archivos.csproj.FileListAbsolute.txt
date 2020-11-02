@@ -1,0 +1,9 @@
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\bin\Debug\Archivos.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\bin\Debug\Archivos.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\bin\Debug\Excepciones.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\bin\Debug\Excepciones.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\obj\Debug\Archivos.csprojAssemblyReference.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\obj\Debug\Archivos.csproj.CopyComplete
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\obj\Debug\Archivos.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\Archivos\obj\Debug\Archivos.pdb

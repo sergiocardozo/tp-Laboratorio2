@@ -1,0 +1,13 @@
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\ClasesInstanciables.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\ClasesInstanciables.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\Archivos.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\ClasesAbstractas.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\Excepciones.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\Archivos.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\ClasesAbstractas.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\bin\Debug\Excepciones.pdb
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\obj\Debug\ClasesInstanciables.csprojAssemblyReference.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\obj\Debug\ClasesInstanciables.csproj.CoreCompileInputs.cache
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\obj\Debug\ClasesInstanciables.csproj.CopyComplete
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\obj\Debug\ClasesInstanciables.dll
+D:\C#\tp-Laboratorio2\TrabajoPracticoN°3\ClasesInstanciables\obj\Debug\ClasesInstanciables.pdb
