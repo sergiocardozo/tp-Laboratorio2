@@ -18,42 +18,7 @@ namespace LogicApp.Entidades
         private int idTipoJuego;
         private string nombreTipoJuego;
 
-        /// <summary>
-        /// Constructor por defecto
-        /// </summary>
-        public VideoJuego()
-        {
-        }
-        /// <summary>
-        /// Constructor que inicializa el tipo de videoJuego y el nombre del tipo de juego
-        /// </summary>
-        /// <param name="idTipoJuego"></param>
-        /// <param name="nombreTipoJuego"></param>
-        public VideoJuego(int idTipoJuego, string nombreTipoJuego)
-        {
-            this.idTipoJuego = idTipoJuego;
-            this.nombreTipoJuego = nombreTipoJuego;
-        }
-        /// <summary>
-        /// Constructor que inicializa los atributos de la clase
-        /// </summary>
-        /// <param name="idTipoJuego"></param>
-        /// <param name="nombreTipoJuego"></param>
-        /// <param name="id"></param>
-        /// <param name="nombreVideoJuego"></param>
-        /// <param name="precio"></param>
-        /// <param name="stock"></param>
-        /// <param name="idTipoVideoJuego"></param>
-        public VideoJuego(int idTipoJuego, string nombreTipoJuego, int id, string nombreVideoJuego, double precio, int stock, int idTipoVideoJuego)
-            : this(idTipoJuego, nombreTipoJuego)
-        {
-            this.id = id;
-            this.nombreVideoJuego = nombreVideoJuego;
-            this.precio = precio;
-            this.stock = stock;
-            this.idTipoVideoJuego = idTipoVideoJuego;
-        }
-
+        #region Propiedades
         /// <summary>
         /// Propiedad Id
         /// </summary>
@@ -119,12 +84,54 @@ namespace LogicApp.Entidades
             get { return nombreTipoJuego; }
             set { nombreTipoJuego = value; }
         }
+
+        #endregion
+
+        #region Constructores
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
+        public VideoJuego()
+        {
+        }
+        /// <summary>
+        /// Constructor que inicializa el tipo de videoJuego y el nombre del tipo de juego
+        /// </summary>
+        /// <param name="idTipoJuego"></param>
+        /// <param name="nombreTipoJuego"></param>
+        public VideoJuego(int idTipoJuego, string nombreTipoJuego)
+        {
+            this.idTipoJuego = idTipoJuego;
+            this.nombreTipoJuego = nombreTipoJuego;
+        }
+        /// <summary>
+        /// Constructor que inicializa los atributos de la clase
+        /// </summary>
+        /// <param name="idTipoJuego"></param>
+        /// <param name="nombreTipoJuego"></param>
+        /// <param name="id"></param>
+        /// <param name="nombreVideoJuego"></param>
+        /// <param name="precio"></param>
+        /// <param name="stock"></param>
+        /// <param name="idTipoVideoJuego"></param>
+        public VideoJuego(int idTipoJuego, string nombreTipoJuego, int id, string nombreVideoJuego, double precio, int stock, int idTipoVideoJuego)
+            : this(idTipoJuego, nombreTipoJuego)
+        {
+            this.id = id;
+            this.nombreVideoJuego = nombreVideoJuego;
+            this.precio = precio;
+            this.stock = stock;
+            this.idTipoVideoJuego = idTipoVideoJuego;
+        }
+        #endregion
+
+        #region Operadores
         /// <summary>
         /// Dos juegos son iguales si tienen el mismo nombre;
         /// </summary>
         /// <param name="j1"></param>
         /// <param name="j2"></param>
-        /// <returns></returns>
+        /// <returns></returns> 
         public static bool operator ==(VideoJuego j1, VideoJuego j2)
         {
             return j1.NombreVideoJuego == j2.NombreVideoJuego;
@@ -138,7 +145,8 @@ namespace LogicApp.Entidades
         public static bool operator !=(VideoJuego j1, VideoJuego j2)
         {
             return !(j1 == j2);
-        }
+        } 
+        #endregion
 
 
     }

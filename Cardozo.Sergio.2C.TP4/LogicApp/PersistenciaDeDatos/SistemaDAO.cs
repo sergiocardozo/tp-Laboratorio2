@@ -334,7 +334,7 @@ namespace LogicApp.PersistenciaDeDatos
         }
         #endregion
 
-        #region DELETE
+        #region Delete
         /// <summary>
         /// Metodo que borra un cliente seleccionado de la Base de datos por su id 
         /// </summary>
@@ -359,6 +359,12 @@ namespace LogicApp.PersistenciaDeDatos
         }
         #endregion
 
+
+        /// <summary>
+        /// Filtra ventas segun el parametro ingresado (NO IMPLEMENTADO)
+        /// </summary>
+        /// <param name="paramIngresado"></param>
+        /// <returns></returns>
         public List<Venta> FiltrarVentas(string paramIngresado)
         {
             try

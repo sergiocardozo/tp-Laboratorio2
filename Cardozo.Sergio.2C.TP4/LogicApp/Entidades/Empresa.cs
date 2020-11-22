@@ -16,18 +16,19 @@ namespace LogicApp.Entidades
         private List<Cliente> clientes;
         private List<VideoJuego> videoJuegos;
 
+        #region Propiedades
         /// <summary>
         /// Propiedad Lista de Ventas
         /// </summary>
-        public List<Venta> Ventas 
+        public List<Venta> Ventas
         {
             get { return ventas; }
-            set { ventas = value; } 
+            set { ventas = value; }
         }
         /// <summary>
         /// Propiedad Lista de Clientes
         /// </summary>
-        public List<Cliente> Clientes 
+        public List<Cliente> Clientes
         {
             get { return clientes; }
             set { clientes = value; }
@@ -35,12 +36,14 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Lista de VideoJuegos
         /// </summary>
-        public List<VideoJuego> VideoJuegos 
+        public List<VideoJuego> VideoJuegos
         {
             get { return videoJuegos; }
             set { videoJuegos = value; }
         }
+        #endregion
 
+        #region Constructor
         /// <summary>
         /// Contructor inicializa las listas
         /// </summary>
@@ -50,7 +53,9 @@ namespace LogicApp.Entidades
             this.clientes = new List<Cliente>();
             this.videoJuegos = new List<VideoJuego>();
         }
+        #endregion
 
+        #region Metodos
         /// <summary>
         /// Metodo que guarda en un archivo XML las ventas
         /// </summary>
@@ -61,6 +66,9 @@ namespace LogicApp.Entidades
             string ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), String.Format(@"Venta.xml"));
             Serializer<List<Venta>>.SerializarAXml(ventas, ruta);
         }
+        #endregion
+
+        #region Operadores
         /// <summary>
         /// Sobrecarga que agrega cliente a la lista
         /// </summary>
@@ -92,7 +100,8 @@ namespace LogicApp.Entidades
             }
             empresa.VideoJuegos.Add(juego);
             return empresa;
-        }
+        } 
+        #endregion
 
     }
 }

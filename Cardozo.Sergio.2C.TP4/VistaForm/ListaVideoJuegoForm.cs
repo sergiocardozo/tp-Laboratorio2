@@ -265,6 +265,10 @@ namespace VistaForm
             txtStock.Enabled = true;
             FormularioPorDefecto();
         }
+
+        /// <summary>
+        /// Limpiar los textbox y borra el boton Borrar Seleccion
+        /// </summary>
         private void FormularioPorDefecto()
         {
             txtPrecio.Clear();
@@ -274,9 +278,6 @@ namespace VistaForm
             btnBorrarSeleccion.Visible = false;   
             
         }
-        private void txtVideoJuego_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.EsLetra();
-        }
+        
     }
 }

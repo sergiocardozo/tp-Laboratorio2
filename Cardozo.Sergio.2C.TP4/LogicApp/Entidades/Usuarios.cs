@@ -14,10 +14,11 @@ namespace LogicApp.Entidades
         private static string nombre;
         private static string apellido;
 
+        #region Propiedades
         /// <summary>
         /// Propiedad ID del Usuario
         /// </summary>
-        public static int ID 
+        public static int ID
         {
             get { return id; }
             set { id = value; }
@@ -25,7 +26,7 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Nombre del Usuario 
         /// </summary>
-        public static string NombreUsuario 
+        public static string NombreUsuario
         {
             get { return nombreUsuario; }
             set { nombreUsuario = value; }
@@ -41,7 +42,7 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Nombre del Usuario
         /// </summary>
-        public static string Nombre 
+        public static string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
@@ -49,10 +50,11 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Apellido del Usuario
         /// </summary>
-        public static string Apellido 
+        public static string Apellido
         {
             get { return apellido; }
             set { apellido = value; }
-        }
+        } 
+        #endregion
     }
 }

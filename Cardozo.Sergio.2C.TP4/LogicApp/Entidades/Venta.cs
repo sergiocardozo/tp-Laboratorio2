@@ -12,10 +12,11 @@ namespace LogicApp.Entidades
         private double ganancia;
         private string nombreJuego;
 
+        #region Propiedades
         /// <summary>
         /// Propiedad Apellido Cliente
         /// </summary>
-        public string CliApellido 
+        public string CliApellido
         {
             get { return cliApellido; }
             set { cliApellido = value; }
@@ -23,7 +24,7 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Nombre Cliente
         /// </summary>
-        public string CliNombre 
+        public string CliNombre
         {
             get { return cliNombre; }
             set { cliNombre = value; }
@@ -31,7 +32,7 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Nombre del Juego 
         /// </summary>
-        public string NombreJuego 
+        public string NombreJuego
         {
             get { return nombreJuego; }
             set { nombreJuego = value; }
@@ -39,7 +40,7 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Ganancia
         /// </summary>
-        public double Ganancia 
+        public double Ganancia
         {
             get { return ganancia; }
             set { ganancia = value; }
@@ -47,11 +48,14 @@ namespace LogicApp.Entidades
         /// <summary>
         /// Propiedad Fecha de la venta
         /// </summary>
-        public DateTime FechaVenta 
+        public DateTime FechaVenta
         {
             get { return fechaVenta; }
             set { fechaVenta = value; }
         }
+        #endregion
+
+        #region Constructores
         /// <summary>
         /// Constructor por defecto
         /// </summary>
@@ -75,6 +79,7 @@ namespace LogicApp.Entidades
             this.fechaVenta = fechaVenta;
             this.ganancia = ganancia;
             this.nombreJuego = nombreJuego;
-        }
+        } 
+        #endregion
     }
 }
