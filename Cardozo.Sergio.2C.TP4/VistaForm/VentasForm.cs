@@ -1,4 +1,5 @@
-﻿using LogicApp.Entidades;
+﻿using LogicApp.Comun;
+using LogicApp.Entidades;
 using LogicApp.PersistenciaDeDatos;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,15 @@ namespace VistaForm
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Se inicializa el formulario y le doy formato a los datagrid extendiendo la clase DataGridView
+        /// y muestro los datos que tengo en mi Base de dato
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VentasForm_Load(object sender, EventArgs e)
         {
+            dataGClientes.FormatearGrid();
             dataGClientes.DataSource = sistema.MostrarClientes();
             dataGClientes.Columns[0].Visible = false;
             dataGClientes.Columns[1].HeaderText = "ID SOCIO";
@@ -37,20 +44,24 @@ namespace VistaForm
             lvClienteSeleccionado.Columns.Add("APELLIDO", 150);
 
             lvVideoJuegos.View = View.Details;
-            lvVideoJuegos.Columns.Add("ID VIDEO JUEGO", 100);
-            lvVideoJuegos.Columns.Add("NOMBRE VIDEO JUEGO", 150);
-            lvVideoJuegos.Columns.Add("TIPO VIDEO JUEGO", 150);
-            lvVideoJuegos.Columns.Add("PRECIO", 80);
-            lvVideoJuegos.Columns.Add("STOCK", 100);
+            lvVideoJuegos.Columns.Add("ID", 40);
+            lvVideoJuegos.Columns.Add("NOMBRE VIDEO JUEGO", 300);
+            lvVideoJuegos.Columns.Add("TIPO JUEGO", 100);
+            lvVideoJuegos.Columns.Add("PRECIO", 60);
+            lvVideoJuegos.Columns.Add("STOCK", 40);
         }
-
+        /// <summary>
+        /// Agrega un cliente a la listView con sus datos correspondientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (dataGClientes.CurrentRow != null)
                 {
-                    ListViewItem item = new ListViewItem(this.dataGClientes.CurrentRow.Cells[0].Value.ToString());
+                    ListViewItem item = new ListViewItem(this.dataGClientes.CurrentRow.Cells[1].Value.ToString());
                     item.SubItems.Add(this.dataGClientes.CurrentRow.Cells[2].Value.ToString());
                     item.SubItems.Add(this.dataGClientes.CurrentRow.Cells[3].Value.ToString());
 
@@ -85,7 +96,11 @@ namespace VistaForm
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Al presionar este boton establece el foco en el boton agregar y borra el cliente seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             lvClienteSeleccionado.Clear();
@@ -106,7 +121,11 @@ namespace VistaForm
             btnCancelar.Enabled = false;
             btnAgregar.Focus();
         }
-
+        /// <summary>
+        /// Genera una nueva venta y lo guarda en la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVender_Click(object sender, EventArgs e)
         {
 
@@ -157,33 +176,15 @@ namespace VistaForm
                 }
             }
             else
-                MessageBox.Show("Debe selecciona un Juego o un cliente", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe selecciona un Juego y un cliente", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
-
-        private void txtFiltraPorCodigo_TextChanged(object sender, EventArgs e)
-        {
-            string searchValue = txtFiltraPorCodigo.Text;
-            
-            dataGClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in dataGClientes.Rows)
-                {
-                    if (row.Cells[1].Value.ToString().Equals(searchValue))
-                    {
-                        row.Selected = true;
-                        break;
-                    }
-                }
-                txtFiltraPorCodigo.Clear();
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-        }
-
+              
+        /// <summary>
+        /// Cierra el formulario 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsBtnAtras_Click(object sender, EventArgs e)
         {
             this.Close();

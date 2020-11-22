@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.tsBtnGuardar = new System.Windows.Forms.ToolStripButton();
             this.tsBtnModificar = new System.Windows.Forms.ToolStripButton();
             this.tsBtnBorrar = new System.Windows.Forms.ToolStripButton();
@@ -47,23 +47,23 @@
             this.txtVideoJuego = new System.Windows.Forms.TextBox();
             this.lblTipoVideoJuego = new System.Windows.Forms.Label();
             this.dataGListaJuegos = new System.Windows.Forms.DataGridView();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             this.gbPanelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGListaJuegos)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // toolStrip
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnGuardar,
             this.tsBtnModificar,
             this.tsBtnBorrar,
             this.tsBtnAtras});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(709, 39);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(709, 39);
+            this.toolStrip.TabIndex = 0;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // tsBtnGuardar
             // 
@@ -111,6 +111,7 @@
             // 
             // gbPanelControl
             // 
+            this.gbPanelControl.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gbPanelControl.Controls.Add(this.btnCancelar);
             this.gbPanelControl.Controls.Add(this.btnModificarJuego);
             this.gbPanelControl.Controls.Add(this.btnBorrarJuego);
@@ -123,6 +124,7 @@
             this.gbPanelControl.Controls.Add(this.lblVideoJuego);
             this.gbPanelControl.Controls.Add(this.txtVideoJuego);
             this.gbPanelControl.Controls.Add(this.lblTipoVideoJuego);
+            this.gbPanelControl.ForeColor = System.Drawing.Color.White;
             this.gbPanelControl.Location = new System.Drawing.Point(12, 42);
             this.gbPanelControl.Name = "gbPanelControl";
             this.gbPanelControl.Size = new System.Drawing.Size(685, 98);
@@ -132,6 +134,8 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.Location = new System.Drawing.Point(420, 67);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 23);
@@ -142,6 +146,8 @@
             // 
             // btnModificarJuego
             // 
+            this.btnModificarJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarJuego.ForeColor = System.Drawing.Color.Black;
             this.btnModificarJuego.Location = new System.Drawing.Point(194, 67);
             this.btnModificarJuego.Name = "btnModificarJuego";
             this.btnModificarJuego.Size = new System.Drawing.Size(107, 23);
@@ -152,6 +158,8 @@
             // 
             // btnBorrarJuego
             // 
+            this.btnBorrarJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarJuego.ForeColor = System.Drawing.Color.Black;
             this.btnBorrarJuego.Location = new System.Drawing.Point(307, 67);
             this.btnBorrarJuego.Name = "btnBorrarJuego";
             this.btnBorrarJuego.Size = new System.Drawing.Size(107, 23);
@@ -162,9 +170,11 @@
             // 
             // btnBorrarSeleccion
             // 
+            this.btnBorrarSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarSeleccion.ForeColor = System.Drawing.Color.Black;
             this.btnBorrarSeleccion.Location = new System.Drawing.Point(533, 67);
             this.btnBorrarSeleccion.Name = "btnBorrarSeleccion";
-            this.btnBorrarSeleccion.Size = new System.Drawing.Size(107, 23);
+            this.btnBorrarSeleccion.Size = new System.Drawing.Size(114, 23);
             this.btnBorrarSeleccion.TabIndex = 132;
             this.btnBorrarSeleccion.Text = "Borrar Seleccion";
             this.btnBorrarSeleccion.UseVisualStyleBackColor = true;
@@ -255,16 +265,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(709, 434);
             this.ControlBox = false;
             this.Controls.Add(this.dataGListaJuegos);
             this.Controls.Add(this.gbPanelControl);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip);
             this.Name = "ListaVideoJuegoForm";
-            this.Text = "Tipo Video Juego";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "VideoJuegos";
             this.Load += new System.EventHandler(this.ListaVideoJuegoForm_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.gbPanelControl.ResumeLayout(false);
             this.gbPanelControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGListaJuegos)).EndInit();
@@ -275,7 +287,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton tsBtnGuardar;
         private System.Windows.Forms.ToolStripButton tsBtnAtras;
         private System.Windows.Forms.GroupBox gbPanelControl;

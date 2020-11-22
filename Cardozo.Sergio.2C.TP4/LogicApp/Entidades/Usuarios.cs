@@ -14,29 +14,45 @@ namespace LogicApp.Entidades
         private static string nombre;
         private static string apellido;
 
+        /// <summary>
+        /// Propiedad ID del Usuario
+        /// </summary>
         public static int ID 
         {
-            get => id; 
-            set => id = value;
+            get { return id; }
+            set { id = value; }
         }
+        /// <summary>
+        /// Propiedad Nombre del Usuario 
+        /// </summary>
         public static string NombreUsuario 
-        { 
-            get => nombreUsuario; 
-            set => nombreUsuario = value;
+        {
+            get { return nombreUsuario; }
+            set { nombreUsuario = value; }
         }
+        /// <summary>
+        /// Propiedad Contraseña del Usuario
+        /// </summary>
         public static string Contraseña
-        { 
-            get => contraseña;
-            set => contraseña = value;
+        {
+            get { return contraseña; }
+            set { contraseña = value; }
         }
+        /// <summary>
+        /// Propiedad Nombre del Usuario
+        /// </summary>
         public static string Nombre 
         {
-            get => nombre; 
-            set => nombre = value; 
+            get { return nombre; }
+            set { nombre = value; }
         }
-        public static string Apellido { 
-            get => apellido; 
-            set => apellido = value; 
+        /// <summary>
+        /// Propiedad Apellido del Usuario
+        /// </summary>
+        public static string Apellido 
+        {
+            get { return apellido; }
+            set { apellido = value; }
         }
     }
 }

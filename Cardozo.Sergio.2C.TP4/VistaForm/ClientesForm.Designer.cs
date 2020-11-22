@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tStrip = new System.Windows.Forms.ToolStrip();
             this.tsBtnGuardar = new System.Windows.Forms.ToolStripButton();
             this.tsBtnModificar = new System.Windows.Forms.ToolStripButton();
@@ -37,16 +37,16 @@
             this.tsBtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.dataGClientes = new System.Windows.Forms.DataGridView();
             this.gBPanelControl = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnBorrarSeleccion = new System.Windows.Forms.Button();
             this.btnModificarCliente = new System.Windows.Forms.Button();
             this.btnBorrarCliente = new System.Windows.Forms.Button();
-            this.lblIDSocio = new System.Windows.Forms.Label();
+            this.lblIdSocio = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtIDSocio = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.tStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGClientes)).BeginInit();
             this.gBPanelControl.SuspendLayout();
@@ -63,7 +63,7 @@
             this.tStrip.Name = "tStrip";
             this.tStrip.Size = new System.Drawing.Size(507, 39);
             this.tStrip.TabIndex = 0;
-            this.tStrip.Text = "toolStrip1";
+            this.tStrip.Text = "toolStrip";
             // 
             // tsBtnGuardar
             // 
@@ -111,20 +111,20 @@
             // 
             // dataGClientes
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dataGClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGClientes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGClientes.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGClientes.Location = new System.Drawing.Point(0, 165);
             this.dataGClientes.MultiSelect = false;
@@ -141,7 +141,7 @@
             this.gBPanelControl.Controls.Add(this.btnBorrarSeleccion);
             this.gBPanelControl.Controls.Add(this.btnModificarCliente);
             this.gBPanelControl.Controls.Add(this.btnBorrarCliente);
-            this.gBPanelControl.Controls.Add(this.lblIDSocio);
+            this.gBPanelControl.Controls.Add(this.lblIdSocio);
             this.gBPanelControl.Controls.Add(this.txtApellido);
             this.gBPanelControl.Controls.Add(this.lblNombre);
             this.gBPanelControl.Controls.Add(this.txtNombre);
@@ -155,12 +155,25 @@
             this.gBPanelControl.TabStop = false;
             this.gBPanelControl.Text = "Panel Control";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(398, 83);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(96, 26);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // btnBorrarSeleccion
             // 
+            this.btnBorrarSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarSeleccion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBorrarSeleccion.Location = new System.Drawing.Point(282, 80);
+            this.btnBorrarSeleccion.Location = new System.Drawing.Point(280, 83);
             this.btnBorrarSeleccion.Name = "btnBorrarSeleccion";
-            this.btnBorrarSeleccion.Size = new System.Drawing.Size(104, 22);
+            this.btnBorrarSeleccion.Size = new System.Drawing.Size(117, 26);
             this.btnBorrarSeleccion.TabIndex = 10;
             this.btnBorrarSeleccion.Text = "Borrar Seleccion";
             this.btnBorrarSeleccion.UseVisualStyleBackColor = true;
@@ -168,10 +181,11 @@
             // 
             // btnModificarCliente
             // 
+            this.btnModificarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModificarCliente.Location = new System.Drawing.Point(282, 52);
+            this.btnModificarCliente.Location = new System.Drawing.Point(280, 51);
             this.btnModificarCliente.Name = "btnModificarCliente";
-            this.btnModificarCliente.Size = new System.Drawing.Size(104, 22);
+            this.btnModificarCliente.Size = new System.Drawing.Size(117, 26);
             this.btnModificarCliente.TabIndex = 9;
             this.btnModificarCliente.Text = "Modificar Cliente";
             this.btnModificarCliente.UseVisualStyleBackColor = true;
@@ -179,25 +193,26 @@
             // 
             // btnBorrarCliente
             // 
+            this.btnBorrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBorrarCliente.Location = new System.Drawing.Point(282, 20);
+            this.btnBorrarCliente.Location = new System.Drawing.Point(280, 19);
             this.btnBorrarCliente.Name = "btnBorrarCliente";
-            this.btnBorrarCliente.Size = new System.Drawing.Size(104, 26);
+            this.btnBorrarCliente.Size = new System.Drawing.Size(117, 27);
             this.btnBorrarCliente.TabIndex = 8;
             this.btnBorrarCliente.Text = "Borrar Cliente";
             this.btnBorrarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBorrarCliente.UseVisualStyleBackColor = true;
             this.btnBorrarCliente.Click += new System.EventHandler(this.btnBorrarCliente_Click);
             // 
-            // lblIDSocio
+            // lblIdSocio
             // 
-            this.lblIDSocio.AutoSize = true;
-            this.lblIDSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDSocio.Location = new System.Drawing.Point(12, 25);
-            this.lblIDSocio.Name = "lblIDSocio";
-            this.lblIDSocio.Size = new System.Drawing.Size(78, 20);
-            this.lblIDSocio.TabIndex = 1;
-            this.lblIDSocio.Text = "ID Socio";
+            this.lblIdSocio.AutoSize = true;
+            this.lblIdSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdSocio.Location = new System.Drawing.Point(12, 25);
+            this.lblIdSocio.Name = "lblIdSocio";
+            this.lblIdSocio.Size = new System.Drawing.Size(78, 20);
+            this.lblIdSocio.TabIndex = 1;
+            this.lblIdSocio.Text = "ID Socio";
             // 
             // txtApellido
             // 
@@ -206,6 +221,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(180, 26);
             this.txtApellido.TabIndex = 6;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // lblNombre
             // 
@@ -224,6 +240,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(180, 26);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblApellido
             // 
@@ -242,17 +259,7 @@
             this.txtIDSocio.Name = "txtIDSocio";
             this.txtIDSocio.Size = new System.Drawing.Size(180, 26);
             this.txtIDSocio.TabIndex = 4;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(392, 79);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(96, 22);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.txtIDSocio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDSocio_KeyPress);
             // 
             // ClientesForm
             // 
@@ -268,7 +275,7 @@
             this.MinimizeBox = false;
             this.Name = "ClientesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ClientesForm";
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
             this.tStrip.ResumeLayout(false);
             this.tStrip.PerformLayout();
@@ -285,7 +292,7 @@
         private System.Windows.Forms.ToolStrip tStrip;
         private System.Windows.Forms.DataGridView dataGClientes;
         private System.Windows.Forms.GroupBox gBPanelControl;
-        private System.Windows.Forms.Label lblIDSocio;
+        private System.Windows.Forms.Label lblIdSocio;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;

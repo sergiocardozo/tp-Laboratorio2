@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashForm));
             this.pBarraProgreso = new System.Windows.Forms.ProgressBar();
             this.lblProgreso = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -65,8 +66,10 @@
             this.BackgroundImage = global::VistaForm.Properties.Resources.WiiU_NSMBU_boxart_01_0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(763, 283);
+            this.ControlBox = false;
             this.Controls.Add(this.lblProgreso);
             this.Controls.Add(this.pBarraProgreso);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SplashForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresando";

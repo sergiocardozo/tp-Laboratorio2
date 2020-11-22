@@ -13,8 +13,8 @@ namespace VistaForm
 {
     public partial class PrincipalForm : Form
     {
-        
         Thread thread;
+        
         public PrincipalForm()
         {
             SplashForm form = new SplashForm();
@@ -25,6 +25,7 @@ namespace VistaForm
         {
             InicializarFechaHora();
         }
+
         /// <summary>
         /// Inicializa el hilo que mantiene actualizada la fecha y la hora.
         /// </summary>
@@ -92,8 +93,8 @@ namespace VistaForm
 
         private void PrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.thread.ThreadState != ThreadState.Aborted)
-                this.thread.Abort();
+            if (thread.ThreadState != ThreadState.Aborted)
+                thread.Abort();
         }
 
         

@@ -125,11 +125,13 @@
             // 
             // lblFechayHora
             // 
+            this.lblFechayHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFechayHora.AutoSize = true;
-            this.lblFechayHora.Location = new System.Drawing.Point(874, 9);
+            this.lblFechayHora.Location = new System.Drawing.Point(751, 9);
             this.lblFechayHora.Name = "lblFechayHora";
-            this.lblFechayHora.Size = new System.Drawing.Size(0, 13);
+            this.lblFechayHora.Size = new System.Drawing.Size(60, 13);
             this.lblFechayHora.TabIndex = 2;
+            this.lblFechayHora.Text = "FechaHora";
             this.lblFechayHora.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // PrincipalForm
@@ -139,12 +141,13 @@
             this.BackgroundImage = global::VistaForm.Properties.Resources.FondoPrincipal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(886, 454);
+            this.ControlBox = false;
             this.Controls.Add(this.lblFechayHora);
             this.Controls.Add(this.toolStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "PrincipalForm";
-            this.Text = "PrincipalForm";
+            this.Text = "Ventana Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrincipalForm_FormClosing);
             this.Load += new System.EventHandler(this.PrincipalForm_Load);

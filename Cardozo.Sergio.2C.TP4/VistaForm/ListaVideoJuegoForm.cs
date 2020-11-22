@@ -21,11 +21,18 @@ namespace VistaForm
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Se inicializa el formulario y le doy formato a los datagrid extendiendo la clase DataGridView
+        /// y muestro los datos que tengo en mi Base de dato
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListaVideoJuegoForm_Load(object sender, EventArgs e)
         {
+            dataGListaJuegos.FormatearGrid();
 
             dataGListaJuegos.DataSource = sistema.MostrarVideoJuegos();
+
             cmbTipoJuegos.DataSource = sistema.ObtenerTiposVideoJuegos();
             cmbTipoJuegos.SelectedItem = cmbTipoJuegos.SelectedValue;
             cmbTipoJuegos.DisplayMember = "NombreTipoJuego";
@@ -39,13 +46,17 @@ namespace VistaForm
             dataGListaJuegos.Columns[1].HeaderText = "NOMBRE VIDEOJUEGO";
             dataGListaJuegos.Columns[2].HeaderText = "PRECIO";
             dataGListaJuegos.Columns[3].HeaderText = "STOCK";
-            dataGListaJuegos.Columns[4].HeaderText = "TIPO JUEGO";
+            dataGListaJuegos.Columns[6].HeaderText = "TIPO JUEGO";
             btnBorrarSeleccion.Visible = false;
             btnBorrarJuego.Visible = false;
             btnModificarJuego.Visible = false;
             btnCancelar.Visible = false;
         }
-
+        /// <summary>
+        /// Al seleccionar una celda te devuelve en los textbox los datos de toda la fila
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGListaJuegos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -54,8 +65,7 @@ namespace VistaForm
                 txtPrecio.Text = dataGListaJuegos.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtStock.Text = dataGListaJuegos.Rows[e.RowIndex].Cells[3].Value.ToString();
                 cmbTipoJuegos.Text = dataGListaJuegos.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txtVideoJuego.Enabled = false;
-                cmbTipoJuegos.Enabled = false;
+
                 btnBorrarSeleccion.Visible = true;
             }
             catch (Exception ex)
@@ -108,7 +118,7 @@ namespace VistaForm
                                         sistema.InsertarVideoJuego(txtVideoJuego.Text, precio, stock, Convert.ToInt32(cmbTipoJuegos.SelectedValue));
                                         dataGListaJuegos.DataSource = sistema.MostrarVideoJuegos();
                                         MessageBox.Show("Juego Agregado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                                        FormularioPorDefecto();
                                     }
                                 }
                             }
@@ -130,7 +140,11 @@ namespace VistaForm
             else
                 MessageBox.Show("Ingresar nombre de juego");
         }
-
+        /// <summary>
+        /// Solo te permite modificar 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsBtnModificar_Click(object sender, EventArgs e)
         {
             btnModificarJuego.Visible = true;
@@ -140,72 +154,129 @@ namespace VistaForm
             txtVideoJuego.Enabled = false;
             cmbTipoJuegos.Enabled = false;
         }
-
+        /// <summary>
+        /// Modifica el item seleccionado del datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificarJuego_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($"¿Seguro desea modificar el juego {txtVideoJuego.Text}?", "Modificar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
+            foreach (DataGridViewRow item in dataGListaJuegos.Rows)
             {
-                sistema.ModificarVideoJuego(txtVideoJuego.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToInt32(txtStock.Text));
-                dataGListaJuegos.DataSource = sistema.MostrarVideoJuegos();
+                if (dataGListaJuegos.CurrentRow != null)
+                {
+                    DialogResult result = MessageBox.Show($"¿Seguro desea modificar el juego {txtVideoJuego.Text}?", "Modificar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+                    if (result == DialogResult.Yes)
+                    {
+                        sistema.ModificarVideoJuego(txtVideoJuego.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToInt32(txtStock.Text));
+                        dataGListaJuegos.DataSource = sistema.MostrarVideoJuegos();
+                        FormularioPorDefecto();
+                    }
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("Debe Seleccionar un Juego para modificar");
+                    break;
+                }
             }
-            btnModificarJuego.Visible = false;
         }
-
+        /// <summary>
+        /// Solo te permite borrar un Juego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsBtnBorrar_Click(object sender, EventArgs e)
         {
-            btnBorrarJuego.Visible = true;            
+            btnBorrarJuego.Visible = true;
             btnCancelar.Visible = true;
             tsBtnGuardar.Enabled = false;
             tsBtnModificar.Enabled = false;
             txtVideoJuego.Enabled = false;
+            txtStock.Enabled = false;
+            txtPrecio.Enabled = false;
             cmbTipoJuegos.Enabled = false;
         }
-
+        /// <summary>
+        /// Borra el item seleccionado del datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrarJuego_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Seguro desea borrar el Juego?", "Borrar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
+            foreach (DataGridViewRow item in dataGListaJuegos.Rows)
             {
-                sistema.BorrarJuego(txtVideoJuego.Text);
-                dataGListaJuegos.DataSource = sistema.MostrarVideoJuegos();
+                if (dataGListaJuegos.CurrentRow != null)
+                {
+                    DialogResult result = MessageBox.Show("¿Seguro desea borrar el Juego?", "Borrar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        sistema.BorrarJuego(txtVideoJuego.Text);
+                        dataGListaJuegos.DataSource = sistema.MostrarVideoJuegos();
+                        FormularioPorDefecto();
+                    }
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un Juego para proceder");
+                    break;
+                }
             }
-            btnBorrarJuego.Visible = false;
         }
+        /// <summary>
+        /// Limpia los textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrarSeleccion_Click(object sender, EventArgs e)
         {
-            txtPrecio.Clear();
-            txtStock.Clear();
-            txtVideoJuego.Clear();
-            cmbTipoJuegos.Text = "<--Tipo de Juegos-->";
-            txtVideoJuego.Enabled = true;
-            cmbTipoJuegos.Enabled = true;
-            btnBorrarSeleccion.Visible = false;
+            FormularioPorDefecto();
 
         }
+        /// <summary>
+        /// Cierra el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsBtnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Cancela la opcion elegida(borrar, modificar) y deja el formulario por defecto.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+
+            btnModificarJuego.Visible = false;
             btnBorrarJuego.Visible = false;
             btnCancelar.Visible = false;
-            txtVideoJuego.Enabled = true;
-            cmbTipoJuegos.Enabled = true;
-            btnBorrarSeleccion.Visible = false;
-            btnModificarJuego.Visible = false;
-            tsBtnGuardar.Enabled = true;
             tsBtnModificar.Enabled = true;
+            tsBtnGuardar.Enabled = true;
             tsBtnBorrar.Enabled = true;
+            cmbTipoJuegos.Enabled = true;
+            txtVideoJuego.Enabled = true;
+            txtPrecio.Enabled = true;
+            txtStock.Enabled = true;
+            FormularioPorDefecto();
+        }
+        private void FormularioPorDefecto()
+        {
             txtPrecio.Clear();
             txtStock.Clear();
             txtVideoJuego.Clear();
-            cmbTipoJuegos.Text = "<--Tipo de Juegos-->";
+            cmbTipoJuegos.Text = "<--Tipo de Juegos-->";            
+            btnBorrarSeleccion.Visible = false;   
+            
+        }
+        private void txtVideoJuego_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.EsLetra();
         }
     }
 }

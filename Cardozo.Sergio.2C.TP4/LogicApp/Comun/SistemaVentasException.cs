@@ -15,16 +15,19 @@ namespace LogicApp.Comun
         public SistemaVentasException()
             :this("",null)
         {
-        }
 
+        }
+        /// <summary>
+        /// Excepcion que recibe solo un mensaje
+        /// </summary>
+        /// <param name="message"></param>
         public SistemaVentasException(string message) 
-            : base(message)
+            : this(message,null)
         {
-            Serializer<SistemaVentasException>.Escribir(this, true);
         }
 
         /// <summary>
-        /// 
+        /// Excepcion que recibe un mensaje y una innerException
         /// </summary>
         /// <param name="mensaje"></param>
         /// <param name="inner"></param>

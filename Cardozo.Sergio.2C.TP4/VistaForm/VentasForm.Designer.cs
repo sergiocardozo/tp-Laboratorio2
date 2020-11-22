@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasForm));
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFiltraPorCodigo = new System.Windows.Forms.TextBox();
+            this.lblSelecciona = new System.Windows.Forms.Label();
             this.dataGClientes = new System.Windows.Forms.DataGridView();
             this.lvClienteSeleccionado = new System.Windows.Forms.ListView();
             this.lvVideoJuegos = new System.Windows.Forms.ListView();
@@ -43,22 +42,17 @@
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblSelecciona
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Cliente";
-            // 
-            // txtFiltraPorCodigo
-            // 
-            this.txtFiltraPorCodigo.Location = new System.Drawing.Point(124, 39);
-            this.txtFiltraPorCodigo.Name = "txtFiltraPorCodigo";
-            this.txtFiltraPorCodigo.Size = new System.Drawing.Size(157, 20);
-            this.txtFiltraPorCodigo.TabIndex = 1;
-            this.txtFiltraPorCodigo.TextChanged += new System.EventHandler(this.txtFiltraPorCodigo_TextChanged);
+            this.lblSelecciona.AutoSize = true;
+            this.lblSelecciona.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblSelecciona.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelecciona.ForeColor = System.Drawing.Color.White;
+            this.lblSelecciona.Location = new System.Drawing.Point(43, 46);
+            this.lblSelecciona.Name = "lblSelecciona";
+            this.lblSelecciona.Size = new System.Drawing.Size(131, 13);
+            this.lblSelecciona.TabIndex = 0;
+            this.lblSelecciona.Text = "Selecciona un Cliente";
             // 
             // dataGClientes
             // 
@@ -107,10 +101,11 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::VistaForm.Properties.Resources.Cancel_icon_icons_com_73703;
             this.btnCancelar.Location = new System.Drawing.Point(615, 259);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(53, 57);
+            this.btnCancelar.Size = new System.Drawing.Size(65, 61);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Eliminar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -119,10 +114,11 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = global::VistaForm.Properties.Resources.add_icon_icons_com_74429;
             this.btnAgregar.Location = new System.Drawing.Point(615, 65);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(53, 59);
+            this.btnAgregar.Size = new System.Drawing.Size(65, 55);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -153,7 +149,9 @@
             // VentasForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(712, 541);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
@@ -161,15 +159,14 @@
             this.Controls.Add(this.lvVideoJuegos);
             this.Controls.Add(this.lvClienteSeleccionado);
             this.Controls.Add(this.dataGClientes);
-            this.Controls.Add(this.txtFiltraPorCodigo);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSelecciona);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(-10, 63);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VentasForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "VentasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ventas";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.VentasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGClientes)).EndInit();
@@ -182,8 +179,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFiltraPorCodigo;
+        private System.Windows.Forms.Label lblSelecciona;
         private System.Windows.Forms.DataGridView dataGClientes;
         private System.Windows.Forms.ListView lvClienteSeleccionado;
         private System.Windows.Forms.ListView lvVideoJuegos;

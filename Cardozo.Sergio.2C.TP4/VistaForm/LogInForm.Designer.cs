@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             this.lblMensajeError = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.lblContraseña = new System.Windows.Forms.Label();
@@ -41,15 +42,17 @@
             this.lblMensajeError.AutoSize = true;
             this.lblMensajeError.BackColor = System.Drawing.Color.Transparent;
             this.lblMensajeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeError.Location = new System.Drawing.Point(338, 94);
+            this.lblMensajeError.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeError.Location = new System.Drawing.Point(205, 96);
             this.lblMensajeError.Name = "lblMensajeError";
-            this.lblMensajeError.Size = new System.Drawing.Size(129, 16);
+            this.lblMensajeError.Size = new System.Drawing.Size(0, 16);
             this.lblMensajeError.TabIndex = 18;
-            this.lblMensajeError.Text = "Mensaje De Error";
             // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(576, 24);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(118, 39);
@@ -110,9 +113,12 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LogInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Log In";
+            this.Text = "Log In Play For Fun";
             this.ResumeLayout(false);
             this.PerformLayout();
 

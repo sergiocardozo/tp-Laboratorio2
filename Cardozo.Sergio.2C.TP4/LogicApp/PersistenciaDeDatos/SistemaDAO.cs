@@ -66,11 +66,11 @@ namespace LogicApp.PersistenciaDeDatos
         /// <param name="id">id del cliente</param>
         /// <param name="nombre">nombre del cliente</param>
         /// <param name="apellido">apellido del cliente</param>
-        public void InsertarCliente(string id, string nombre, string apellido)
+        public void InsertarCliente(string idSocio, string nombre, string apellido)
         {
             SistemaDAO.Comando.CommandText = "INSERT INTO CLIENTES (idsocio, nombre, apellido) VALUES (@idsocio, @nombre, @apellido);";
             SistemaDAO.Comando.Parameters.Clear();
-            SistemaDAO.Comando.Parameters.AddWithValue("@idsocio", id);
+            SistemaDAO.Comando.Parameters.AddWithValue("@idsocio", idSocio);
             SistemaDAO.Comando.Parameters.AddWithValue("@nombre", nombre);
             SistemaDAO.Comando.Parameters.AddWithValue("@apellido", apellido);
             SistemaDAO.Ejecutar();

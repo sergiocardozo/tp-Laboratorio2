@@ -13,12 +13,16 @@ using System.Windows.Forms;
 namespace VistaForm
 {
     public partial class LogInForm : Form
-    {
+    {        
         public LogInForm()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Al presionar el boton accede a la base de datos para verificar que el usuario es correcto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (txtUsuario.Text != "NombreDeUsuario" && txtUsuario.TextLength > 2)
@@ -30,8 +34,7 @@ namespace VistaForm
                     if (validarLogin == true)
                     {
                         PrincipalForm frmPrincipal = new PrincipalForm();
-                       
-                        frmPrincipal.Show();
+                        frmPrincipal.Show();                       
                         frmPrincipal.FormClosed += LogOut;
                         this.Hide();
                     }
@@ -49,17 +52,26 @@ namespace VistaForm
             else
                 msgError("Por Favor, Ingresar Usuario");
         }
+        /// <summary>
+        /// Va a imprimir en el label el mensaje de error
+        /// </summary>
+        /// <param name="mensaje"></param>
         private void msgError(string mensaje)
         {
             lblMensajeError.Text = "     " + mensaje;
 
         }
-        public void LogOut(object sender, FormClosedEventArgs e)
+        /// <summary>
+        /// Metodo para asociar el evento Closed del formulario principal al LogOut
+        /// Limpia los textbox y muestra este formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LogOut(object sender, FormClosedEventArgs e)
         {
-            
             lblMensajeError.Visible = true;
-            txtContraseña.Clear();
             txtUsuario.Clear();
+            txtContraseña.Clear();
             txtContraseña.UseSystemPasswordChar = false;
             this.Show();
         }

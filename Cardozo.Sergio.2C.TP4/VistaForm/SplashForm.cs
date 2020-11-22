@@ -13,11 +13,8 @@ namespace VistaForm
 {
     public partial class SplashForm : Form
     {
-        delegate void CambiarProgresoDelegate(string texto, int valor);
+        private delegate void CambiarProgresoDelegate(string texto, int valor);
 
-        public delegate void Mensaje(string mensaje);
-        public event Mensaje Msg;
-        
         Thread thread;
         public SplashForm()
         {
@@ -25,7 +22,7 @@ namespace VistaForm
 
             timer.Start();
             IniciarConteo();
-            
+
         }
         /// <summary>
         /// Metodo que inicializa el subproceso
@@ -75,17 +72,17 @@ namespace VistaForm
         {
             if (pBarraProgreso.Value == 100)
             {
-                timer.Stop();
-                Msg += MensajeFinalizado;
+                timer.Stop();                
                 this.Close();
             }
         }
 
-        private void MensajeFinalizado(string mensaje)
-        {
-            mensaje = string.Format($"Bienvenido al sistema de ventas PlayforFun");
-            MessageBox.Show(Msg(mensaje));
-        }
+        /// <summary>
+        /// Al cerrarse el formulario frena los hilos en proceso. En este caso no es necesario ya que el  hilo termina
+        /// cuando la progressbar termina su conteo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SplashForm_FormClosing(object sender, FormClosingEventArgs e)
         {
 
@@ -93,6 +90,6 @@ namespace VistaForm
                 thread.Abort();
         }
 
-      
+
     }
 }

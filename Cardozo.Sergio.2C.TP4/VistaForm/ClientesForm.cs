@@ -16,10 +16,8 @@ namespace VistaForm
 {
     public partial class ClientesForm : Form
     {
-        public delegate void LimpiarTextbox();
-        public event LimpiarTextbox Limpiar;
-        Empresa empresa;
-        SistemaDAO sistema;
+        private Empresa empresa;
+        private SistemaDAO sistema;
 
         public ClientesForm()
         {
@@ -27,12 +25,20 @@ namespace VistaForm
             sistema = new SistemaDAO();
             empresa = new Empresa();
         }
-
+        /// <summary>
+        /// Se inicializa el formulario y le doy formato a los datagrid extendiendo la clase DataGridView
+        /// y muestro los datos que tengo en mi Base de dato
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClientesForm_Load(object sender, EventArgs e)
         {
+            dataGClientes.FormatearGrid();
+
             dataGClientes.DataSource = sistema.MostrarClientes();
+
             dataGClientes.Columns[0].Visible = false;
-            dataGClientes.Columns[1].HeaderText = "ID SOCIO";
+            dataGClientes.Columns[1].HeaderText = "DNI";
             dataGClientes.Columns[2].HeaderText = "NOMBRE";
             dataGClientes.Columns[3].HeaderText = "APELLIDO";
             btnBorrarCliente.Visible = false;
@@ -79,15 +85,14 @@ namespace VistaForm
                                     sistema.InsertarCliente(txtIDSocio.Text, txtNombre.Text, txtApellido.Text);
                                     dataGClientes.DataSource = sistema.MostrarClientes();
                                     MessageBox.Show("Cliente Agregado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    LimpiarSeleccion();
                                 }
                             }
                         }
                         catch (SistemaVentasException ex)
                         {
-
                             MessageBox.Show(ex.Message);
                         }
-
                     }
                     else
                         MessageBox.Show("Debe Ingresar Apellido de socio");
@@ -116,15 +121,11 @@ namespace VistaForm
         {
             try
             {
-
-
                 txtIDSocio.Text = dataGClientes.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtNombre.Text = dataGClientes.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtApellido.Text = dataGClientes.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtIDSocio.Enabled = false;
                 btnBorrarSeleccion.Visible = true;
-
-
             }
             catch (Exception ex)
             {
@@ -151,18 +152,25 @@ namespace VistaForm
         /// <param name="e"></param>
         private void ModificarCliente_Click(object sender, EventArgs e)
         {
-            tsBtnBorrarCliente.Enabled = false;
-            tsBtnGuardar.Enabled = false;
-
-
-            DialogResult result = MessageBox.Show($"¿Seguro desea modificar el cliente {txtApellido.Text}, {txtNombre.Text}?", "Modificar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            foreach (DataGridViewRow item in dataGClientes.Rows)
             {
-                sistema.ModificarCliente(txtIDSocio.Text, txtNombre.Text, txtApellido.Text);
-                dataGClientes.DataSource = sistema.MostrarClientes();
+                if (dataGClientes.CurrentRow != null)
+                {
+                    DialogResult result = MessageBox.Show($"¿Seguro desea modificar el cliente {txtApellido.Text}, {txtNombre.Text}?", "Modificar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        sistema.ModificarCliente(txtIDSocio.Text, txtNombre.Text, txtApellido.Text);
+                        dataGClientes.DataSource = sistema.MostrarClientes();
+                        LimpiarSeleccion();
+                    }
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un Cliente de la grilla", "Atencion", MessageBoxButtons.OK);
+                    break;
+                }
             }
-            LimpiarSeleccion();
-
 
         }
         /// <summary>
@@ -176,6 +184,9 @@ namespace VistaForm
             btnCancelar.Visible = true;
             tsBtnGuardar.Enabled = false;
             tsBtnModificar.Enabled = false;
+            txtApellido.Enabled = false;
+            txtIDSocio.Enabled = false;
+            txtNombre.Enabled = false;
         }
         /// <summary>
         /// Borra un cliente seleccionado de la grilla
@@ -184,14 +195,25 @@ namespace VistaForm
         /// <param name="e"></param>
         private void btnBorrarCliente_Click(object sender, EventArgs e)
         {
-
-            DialogResult result = MessageBox.Show($"¿Seguro desea borrar el Cliente {txtApellido.Text}, {txtNombre.Text}?", "Borrar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            foreach (DataGridViewRow item in dataGClientes.Rows)
             {
-                sistema.BorrarCliente(txtIDSocio.Text);
-                dataGClientes.DataSource = sistema.MostrarClientes();
+                if (dataGClientes.CurrentRow.Index > 0)
+                {                 
+                    DialogResult result = MessageBox.Show($"¿Seguro desea borrar el Cliente {txtApellido.Text}, {txtNombre.Text}?", "Borrar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        sistema.BorrarCliente(txtIDSocio.Text);
+                        dataGClientes.DataSource = sistema.MostrarClientes();
+                        LimpiarSeleccion();
+                    }
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un Cliente de la grilla", "Atencion", MessageBoxButtons.OK);
+                    break;                    
+                }
             }
-            LimpiarSeleccion();
         }
         /// <summary>
         /// Al presionar el boton limpia los textbox
@@ -203,14 +225,14 @@ namespace VistaForm
             LimpiarSeleccion();
         }
         /// <summary>
-        /// Metodo que limpia los datos ingresados en los textbox
+        /// Metodo que deja el formulario por defecto
         /// </summary>
         private void LimpiarSeleccion()
         {
             txtIDSocio.Clear();
             txtApellido.Clear();
             txtNombre.Clear();
-            txtIDSocio.Enabled = true;
+            
             btnBorrarSeleccion.Visible = false;
         }
         /// <summary>
@@ -226,7 +248,40 @@ namespace VistaForm
             tsBtnModificar.Enabled = true;
             tsBtnGuardar.Enabled = true;
             tsBtnBorrarCliente.Enabled = true;
+            txtApellido.Enabled = true;
+            txtIDSocio.Enabled = true;
+            txtNombre.Enabled = true;
             LimpiarSeleccion();
         }
+        /// <summary>
+        /// Extiendo la clase KeyPressEventArgs para solo se podra ingresar numeros en el txtIdSocio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIDSocio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.EsNumero();
+        }
+
+        /// <summary>
+        /// Extiendo la clase KeyPressEventArgs para solo se podra ingresar Letras en el txtNombre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.EsLetra(); 
+        }
+        /// <summary>
+        /// Extiendo la clase KeyPressEventArgs para solo se podra ingresar Letras en el txtApellido
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.EsLetra(); // METODO DE EXTENSION
+        }
+
+
     }
 }
